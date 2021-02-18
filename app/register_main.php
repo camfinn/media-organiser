@@ -76,51 +76,55 @@ if(isset($_POST['create_account'])) {
 	}//end form
 }//end
 ?>
-      <div class="card">
-        <div class="card-body">
-        <form role="form" class="register-form" name="register" action="register" method="post">
-      <div class="text-center mb-4">
+
+
+<form role="form" class="form-signin" name="register" action="register" method="post">
+  <div class="card">
+    <div class="card-body">
+      <div class="text-center mb-3">
         <?
           //echo $build_query;
 
 
-            if($form_error == true) {
-             echo "<div class=\"alert alert-solid alert-danger\">";
-             echo "<strong>Oops..</strong><br />";
-             $error_debug = explode("|", substr($error_log,0,-1));
-             $i=1;
-             foreach($error_debug as $the_error) {
-              echo "<strong>".$i.".</strong> ".$the_error."<br />";
-              $i++;
-             }
-             echo "</div>";
-            }
-            if($form_error == false && !empty($change_log)) {
-            echo "<div class=\"alert alert-solid alert-success\">";
-            echo "<strong>".$change_log."</strong><br />";
-            echo "</div>";
-            }
-            ?>
-            <br>
-        <h1>Create An Account</h1>
+      		  if($form_error == true) {
+      			 echo "<div class=\"alert alert-solid alert-danger\">";
+      			 echo "<strong>Oops..</strong><br />";
+      			 $error_debug = explode("|", substr($error_log,0,-1));
+      			 $i=1;
+      			 foreach($error_debug as $the_error) {
+      			  echo "<strong>".$i.".</strong> ".$the_error."<br />";
+      			  $i++;
+      			 }
+      			 echo "</div>";
+      		  }
+      		  if($form_error == false && !empty($change_log)) {
+      			echo "<div class=\"alert alert-solid alert-success\">";
+      			echo "<strong>".$change_log."</strong><br />";
+      			echo "</div>";
+      		  }
+      		  ?>
         <br>
-        <h5>Please enter an email and password to create an account</h5>
+        <h5 class="mb-0">Register For An Account</h5>
+        <span class="d-block text-muted">Your Credentials</span>
       </div>
 
-      <div class="form-label-group">
-        <input type="email" class="form-control" name="email" id="email"  required>
-        <label for="inputEmail">Email address</label>
-      </div>
+<div class="form-label-group">
+  <input type="email" class="form-control" name="email" id="email"  required>
+  <label for="inputEmail">Email address</label>
+</div>
 
-      <div class="form-label-group">
-        <input type="password" class="form-control" id="password" name="password"  required>
-        <label for="inputPassword">Password</label>
-      </div>
+<div class="form-label-group">
+  <input type="password" class="form-control" id="password" name="password"  required>
+  <label for="inputPassword">Password</label>
+</div>
 
 
-      <button name="create_account" class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
-      </form>
-      <br>
-      <a href="login"><button class="btn btn-lg btn-primary btn-block text-white" type="button">Back To Login</button></a>
-    </div>
-  </div>
+<button name="create_account" class="btn btn-primary btn-block" type="submit">Create Account</button>
+</form>
+<br>
+<a href="login"><button class="btn btn-primary btn-block text-white" type="button">Back To Login</button></a>
+<br>
+<span class="form-text text-center text-muted">By continuing, you're confirming that you've read our <a href="#">Terms &amp; Conditions</a> and <a href="#">Cookie Policy</a></span>
+</div>
+</div>
+</form>

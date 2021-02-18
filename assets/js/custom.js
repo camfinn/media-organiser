@@ -381,3 +381,11 @@ $("#music").click(function() {
     }
   }
 })();
+
+// Responsive integration
+        $('.datatable-row-responsive').DataTable({
+            rowReorder: {
+                selector: 'td:nth-child(2)'
+            },
+            responsive: true
+        });

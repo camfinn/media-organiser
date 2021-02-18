@@ -84,62 +84,51 @@ if(isset($_POST['login_submit'])) {
 }
 ?>
 
-			<!-- Content area -->
-			<div class="content d-flex justify-content-center align-items-center">
-				<!-- Login card -->
-				<form role="form" class="login-form" name="login" action="login" method="post">
-					<input type="hidden" name="token" value="<?=substr(md5(time()), 10, 26)?>"/>
-					<input type="hidden" name="url" value="<?php if(isset($_GET['url'])) {
-    echo htmlspecialchars($_GET['url']); } ?>">
-					<div class="card mb-0">
-						<div class="card-body">
-							<div class="text-center mb-3">
-								<img src="https://propertypix.s3.eu-west-2.amazonaws.com/assets/images/logo.png" width="150" class="pt block-center img-responsive">
-								<h5 class="mb-0">Login to your account</h5>
-								<span class="d-block text-muted">Your credentials</span>
-							</div>
-<?
+<form class="form-signin" role="form" name="login" action="login" method="post" >
+  <input type="hidden" name="token" value="<?=substr(md5(time()), 10, 26)?>"/>
+  <input type="hidden" name="url" value="<?php if(isset($_GET['url'])) {
+echo htmlspecialchars($_GET['url']); } ?>">
+ <div class="card">
+   <div class="card-body">
+  <div class="text-center mb-3">
+    <br>
+    <h5 class="mb-0">Login to your account</h5>
+    <span class="d-block text-muted">Your credentials</span>
+  </div>
+  <?
   //Here display any error messages that are in the $error_log
   if($form_error == true) {
-	  echo "<div class=\"validation-invalid-label\">".$error_log."</div>";
+  echo "<div class=\"validation-invalid-label\">".$error_log."</div>";
   }
-?>
-							<div class="form-group form-group-feedback form-group-feedback-left">
-								<input type="email" name="login_email"  maxlength="60"  id="login_email" class="form-control" placeholder="Enter your email" required>
-								<div class="form-control-feedback">
-									<i class="icon-user text-muted"></i>
-								</div>
-							</div>
+  ?>
+  <div class="form-group form-group-feedback form-group-feedback-left">
+    <input type="email" name="login_email"  maxlength="60"  id="login_email" class="form-control" placeholder="Enter your email" required>
+    <div class="form-control-feedback">
+      <i class="icon-user text-muted"></i>
+    </div>
+  </div>
 
-							<div class="form-group form-group-feedback form-group-feedback-left">
-								<input type="password" id="login_password" name="login_password" maxlength="16" class="form-control" placeholder="Enter your password" required>
-								<div class="form-control-feedback">
-									<i class="icon-lock2 text-muted"></i>
-								</div>
-							</div>
+  <div class="form-group form-group-feedback form-group-feedback-left">
+    <input type="password" id="login_password" name="login_password" maxlength="16" class="form-control" placeholder="Enter your password" required>
+    <div class="form-control-feedback">
+      <i class="icon-lock2 text-muted"></i>
+    </div>
+  </div>
 
-							<div class="form-group d-flex align-items-center">
-								<div class="form-check mb-0">
-									<label class="form-check-label">
-										<input type="checkbox" name="remember" class="form-input-styled" checked data-fouc>
-										Remember
-									</label>
-								</div>
+  <div class="form-group d-flex align-items-center">
+    <div class="form-check mb-0">
+    </div>
 
-								<a href="/password-recovery" class="ml-auto">Forgot password?</a>
-							</div>
-
-							<div class="form-group">
-								<button type="submit" name="login_submit" class="btn bg-primary text-white btn-block">Log in <i class="icon-circle-right2 ml-2"></i></button>
-                <br>
-                <a href="register"><button class="btn btn-primary btn-block text-white" type="button">Register</button></a>
-
-							</div>
-
-							<span class="form-text text-center text-muted">By continuing, you're confirming that you've read our <a href="#">Terms &amp; Conditions</a> and <a href="#">Cookie Policy</a></span>
-						</div>
-					</div>
-				</form>
-				<!-- /login card -->
-			</div>
-			<!-- /content area -->
+    <a href="/password-recovery" class="ml-auto">Forgot password?</a>
+  </div>
+  <br>
+  <div class="form-group">
+    <button type="submit" name="login_submit" class="btn bg-primary text-white btn-block">Log in <i class="icon-circle-right2 ml-2"></i></button>
+    <br>
+    <a href="register"><button class="btn btn-primary btn-block text-white" type="button">Register</button></a>
+    <br>
+    <span class="form-text text-center text-muted">By continuing, you're confirming that you've read our <a href="#">Terms &amp; Conditions</a> and <a href="#">Cookie Policy</a></span>
+  </div>
+ </div>
+</div>
+</form>

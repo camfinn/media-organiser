@@ -106,6 +106,35 @@ if($form_error==false){
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="addcatmodal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addcatmodal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addcatmodal">Edit A Category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Edit Category Title</label>
+            <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+              <option value="AL">Alabama</option>
+                ...
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="editcatmodal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="editcatmodal" aria-hidden="true">
@@ -119,16 +148,6 @@ if($form_error==false){
       </div>
       <div class="modal-body">
         <form>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Select the category you want to edit</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
           <div class="form-group">
             <label for="exampleFormControlInput1">Edit Category Title</label>
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -239,139 +258,6 @@ if($form_error==false){
           <button type="submit" name="save_play" id="save_play" class="btn btn-primary">Save</button>
         </div>
        </form>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="addcat" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addcat" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addcat">Add MEdia</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Select the category you want to edit</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Edit Category Title</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="createcatmodal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="createcatmodal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="createcatmodal">Create A Category</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <form name="save_cat" method="post" >
-      <div class="modal-body">
-          <div class="form-group">
-            <label for="title">Category Title</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="title">
-          </div>
-          <?
-            //echo $build_query;
-
-
-        		  if($form_error == true) {
-        			 echo "<div class=\"alert alert-solid alert-danger\">";
-        			 echo "<strong>Oops..</strong><br />";
-        			 $error_debug = explode("|", substr($error_log,0,-1));
-        			 $i=1;
-        			 foreach($error_debug as $the_error) {
-        			  echo "<strong>".$i.".</strong> ".$the_error."<br />";
-        			  $i++;
-        			 }
-        			 echo "</div>";
-        		  }
-        		  if($form_error == false && !empty($change_log)) {
-        			echo "<div class=\"alert alert-solid alert-success\">";
-        			echo "<strong>".$change_log."</strong><br />";
-        			echo "</div>";
-        		  }
-        		  ?>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Select the media you want to use</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" name="save_cat" id="save_cat" class="btn btn-primary">Save</button>
-      </div>
-     </form>
-    </div>
-  </div>
-</div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="editcat" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="editcat" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editcat">Edit A Category</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlSelect1">Select the category you want to edit</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Edit Category Title</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
-      </div>
     </div>
   </div>
 </div>

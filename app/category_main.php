@@ -27,7 +27,7 @@
               $status = 'active';
               $active_tab = $search_category['id'];
             }
-          echo "<a class=\"nav-link $status\" id=\"v-".$search_category['id']."-tab\" data-toggle=\"pill\" href=\"#v-".$search_category['id']."\" role=\"tab\" aria-controls=\"v-".$search_category['id']."\" aria-selected=\"false\">".$search_category['title']."<span class=\"float-right\"><button class=\"btn text-white\" data-toggle=\"modal\" data-target=\"#addcat\"><i class=\"fas fa-plus icon-white ml-2\"></i></button><button class=\"btn text-white\" data-toggle=\"modal\" data-target=\"#editcat\"><i class=\"fas fa-pencil-alt icon-white ml-2\"></i></button><i class=\"far fa-trash-alt ml-2\"></i></span></a>";
+          echo "<a class=\"nav-link $status\" id=\"v-".$search_category['id']."-tab\" data-toggle=\"pill\" href=\"#v-".$search_category['id']."\" role=\"tab\" aria-controls=\"v-".$search_category['id']."\" aria-selected=\"false\">".$search_category['title']."<span class=\"float-right\"><button class=\"btn text-white\" data-toggle=\"modal\" data-target=\"#addcatmodal\"><i class=\"fas fa-plus icon-white ml-2\"></i></button><button class=\"btn text-white\" data-toggle=\"modal\" data-target=\"#editcatmodal\"><i class=\"fas fa-pencil-alt icon-white ml-2\"></i></button><i class=\"far fa-trash-alt ml-2\"></i></span></a>";
 
           $status = '';
           $i++;

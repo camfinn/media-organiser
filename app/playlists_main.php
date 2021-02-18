@@ -1,4 +1,4 @@
-	<!-- <link href="/assets/css/bootstrap.playlist.css" rel="stylesheet"> -->
+	<link href="/assets/css/bootstrap.playlist.css" rel="stylesheet">
 
 <!-- start of main -->
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
@@ -50,7 +50,7 @@
 
             <!-- Basic initialization -->
             <div class=\"card\">
-              <table class=\"table datatable-row-basic\">
+              <table class=\"table datatable-row-responsive\">
                 <thead>
                   <tr>
                     <th>#</th>
@@ -59,7 +59,9 @@
                     <th class=\"text-center\">Actions</th>
                   </tr>
                 </thead>
-                <tbody>";
+                <tbody>
+                  <tr>
+                ";
 
                   $status ='';
                   $search_media=mysqli_query($dbmo,"SELECT a.id as header_id, a.title as header, c.* FROM `playlists` a INNER JOIN `play_media_rel` b on a.id=b.play_id INNER JOIN `media` c on b.media_id=c.id WHERE a.id = '".$search_playlist['id']."' and a.acc_id='".$accountDetail['id']."' ORDER BY a.id DESC");
@@ -68,13 +70,12 @@
 
                   if($countsearch_media==0){
 
-                    echo "No Media Found";
+                    echo "<td>No Media Found</td>";
 
                   }else{
                     while ($media = mysqli_fetch_array($search_media)) {
 
                     ?>
-                      <tr>
                       <td><?php echo $media['id'] ?></td>
                       <td><a href="#"><?php echo $media['title'] ?></a></td>
                       <td><?php echo $media['description'] ?></td>
@@ -94,15 +95,16 @@
                 }
                 ?>
         </div>
-      </div><!-- <div class="col-9"> -->
+      </div>
+      <!-- <div class="col-9"> -->
     </div>
     </div>
   </div>
 </main>
 <!-- end of main -->
 
-<!-- <script src="/assets/js/datatables.min.js"></script>
+<script src="/assets/js/datatables.min.js"></script>
 <script src="/assets/js/responsive-playlist.js"></script>
 <script src="/assets/js/row-reorder.js"></script>
 <script src="/assets/js/datatables-row-reorder.js"></script>
-<script src="/assets/js/datatables-playlist.js"></script> -->
+<script src="/assets/js/datatables-playlist.js"></script>
