@@ -55,6 +55,37 @@ echo $id;
 
 
 ?>
+<style>
+					.dropzone { padding: 0 !important; cursor: pointer; }
+					.dz-default.dz-message::before {
+						content: "" !important;
+						color: #1976d2 !important;
+						font-family: 'Font Awesome 5 Pro' !important;
+						font-weight: lighter;
+					}
+					.dz-details { display: none; }
+					.dz-remove {
+						position: relative;
+						text-transform: uppercase;
+						color: #fff !important;
+						background-color: #f44336 !important;
+						font-weight: 500;
+						text-align: center !important;
+						border: 1px solid transparent !important;
+						padding: .4375rem .875rem !important;
+						font-size: .8125rem;
+						line-height: 1.5385;
+						border-radius: .1875rem !important;
+						transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
+						-webkit-appearance: button;
+						overflow: visible;
+						margin: 0;
+						font-family: inherit;
+					}
+					.dz-remove:hover {
+						background-color: #E23E32 !important;
+					}
+				</style>
 
 <!-- start of main -->
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
@@ -93,13 +124,39 @@ echo $id;
         <div class="col-md-6">
           <!-- start of card -->
           <div class="card mb-4 box-shadow">
-            <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
-            <!-- start of card body -->
-            <div class="card-body">
-              <h6>Add an image by selecting the dropzone below</h6>
-              <br>
-            </div>
-            <!-- end of card body -->
+            <!-- Single file upload -->
+    				<div class="card">
+    					<div class="card-header header-elements-inline">
+    						<h5 class="card-title">Single file</h5>
+    						<div class="header-elements">
+    							<div class="list-icons">
+    		                		<a class="list-icons-item" data-action="collapse"></a>
+    		                		<a class="list-icons-item" data-action="reload"></a>
+    		                		<a class="list-icons-item" data-action="remove"></a>
+    		                	</div>
+    	                	</div>
+    					</div>
+
+    					<div class="card-body">
+                <div class="dropzone dropzone-single" data-toggle="dropzone" data-dropzone-url="http://">
+                  <div class="fallback">
+                      <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="dropzoneBasicUpload">
+                          <label class="custom-file-label" for="dropzoneBasicUpload">Choose file</label>
+                      </div>
+                  </div>
+
+                  <div class="dz-preview dz-preview-single">
+                      <div class="dz-preview-cover">
+                          <img class="dz-preview-img" src="..." alt="..." data-dz-thumbnail>
+                      </div>
+                  </div>
+              </div>
+
+
+    					</div>
+    				</div>
+  				<!-- /single file upload -->
           </div>
           <!-- end of card -->
         </div>

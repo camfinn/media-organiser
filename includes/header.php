@@ -26,6 +26,7 @@ if($_SESSION['loggedin'] == true){
   <link href="/assets/css/dropzone.css" rel="stylesheet">
   <link href="/assets/css/basic.min.css" rel="stylesheet">
   <link href="/assets/css/basic.css" rel="stylesheet">
+	<!-- <link href="/assets/css/datatables.css" rel="stylesheet"> -->
   <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
   <link href="/assets/css/all.css" rel="stylesheet">
   <link href="/assets/css/fontawesome.css" rel="stylesheet">

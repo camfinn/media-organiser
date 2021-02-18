@@ -21,7 +21,7 @@ $directory = $_SERVER['REQUEST_URI'];
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white <?= ($directory == '/categories') ? 'active':''; ?>" href="categories" aria-selected="false">
+              <a class="nav-link text-white <?= ($directory == '/category') ? 'active':''; ?>" href="category" aria-selected="false">
                 <i class="fad fa-file-audio fa-lg mr-2"></i>
                 Categories
               </a>

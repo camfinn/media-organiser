@@ -1,24 +1,38 @@
-<div class="container">
-	<video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg">
-		 <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
-			<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
-			<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-			<!-- Caption files -->
-			<track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt"
-					default>
-			<track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
-			<!-- Fallback for browsers that don't support the <video> element -->
-			<a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
-	</video>
-</div>
-<!-- Plyr resources and browser polyfills are specified in the pen settings -->
+  <title>Media Organiser | Dashboard</title>
 
-<script>
-// Change the second argument to your options:
-// https://github.com/sampotts/plyr/#options
-const player = new Plyr('video', {captions: {active: true}});
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/css/dropzone.min.css" rel="stylesheet">
+  <link href="/assets/css/dropzone.css" rel="stylesheet">
+  <link href="/assets/css/basic.min.css" rel="stylesheet">
+  <link href="/assets/css/basic.css" rel="stylesheet">
+	<!-- <link href="/assets/css/datatables.css" rel="stylesheet"> -->
+  <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/assets/css/all.css" rel="stylesheet">
+  <link href="/assets/css/fontawesome.css" rel="stylesheet">
+<link href="/assets/css/brands.css" rel="stylesheet">
+<link href="/assets/css/solid.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="assets/css/custom.css" rel="stylesheet">
+</head>
+<body>
 
-// Expose player so it can be used from the console
-window.player = player;
-</script>
+	<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+	<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+
+
+	<p>
+	  This is the most minimal example of Dropzone. The upload in this example
+	  doesn't work, because there is no actual server to handle the file upload.
+	</p>
+
+	<!-- Change /upload-target to your upload address -->
+<form action="/upload.php" class="dropzone" id="dropzonewidget">

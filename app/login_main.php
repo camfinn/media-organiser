@@ -130,7 +130,9 @@ if(isset($_POST['login_submit'])) {
 							</div>
 
 							<div class="form-group">
-								<button type="submit" name="login_submit" class="btn bg-slate-800 btn-block">Log in <i class="icon-circle-right2 ml-2"></i></button>
+								<button type="submit" name="login_submit" class="btn bg-primary text-white btn-block">Log in <i class="icon-circle-right2 ml-2"></i></button>
+                <br>
+                <a href="register"><button class="btn btn-primary btn-block text-white" type="button">Register</button></a>
 
 							</div>
 
