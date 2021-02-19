@@ -53,7 +53,7 @@ if(isset($_POST['login_submit'])) {
       			$check_access_details=mysqli_fetch_array(mysqli_query($dbmo,"SELECT * FROM `accounts`  WHERE email='".$login_email."'"));
       			$today = date("Y-m-d");
 
-      			if($check_access_details['expire_date'] <$today){
+      			if($check_access_details['access'] <'1'){
       				//Has the Company Expired
       				$form_error = true;
       				$error_log .= "Subscription has expired<br />";

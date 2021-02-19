@@ -69,7 +69,7 @@ if(isset($_POST['create_account'])) {
 			mysqli_query($dbmo,"INSERT INTO `activity_log` (date,time,type,info,acc_id) VALUES ('".date("Y-m-d")."','".date("H:i:s")."','Account Editied','Account Created ID: ".$last_id." - ".$email." ".$password."</br> ".$change_log."','".$last_id."')");
 
 			//Forward onto Upload Page
-			 header("Location: dashboard?id=".$last_id);
+			 header("Location: dashboard");
 			 exit();
 
 		}
